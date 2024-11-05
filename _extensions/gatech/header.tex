@@ -1,0 +1,22 @@
+% header.tex for GA Tech Template
+
+% Define GA Tech colors
+\usepackage{xcolor}
+\definecolor{gatechblue}{RGB}{0, 33, 71}
+\definecolor{gatechgold}{RGB}{207, 181, 59}
+
+% Set up page headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{\color{gatechblue} GA Tech Data Analytics Masters}}
+\rhead{\includegraphics[height=1cm]{gatech_logo.png}} % Include logo
+
+% Section and Subsection Colors
+\titleformat{\section}
+  {\color{gatechblue}\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\color{gatechgold}\normalfont\large\bfseries}
+  {\thesubsection}{1em}{}
