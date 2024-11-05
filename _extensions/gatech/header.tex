@@ -1,22 +1,88 @@
 % header.tex for GA Tech Template
 
+% Load required packages
+\usepackage{ifthen}
+\usepackage{fancyhdr}    % For header/footer customization
+\usepackage{xcolor}       % For colors
+\usepackage{graphicx}     % For logo images
+\usepackage{geometry}     % For page geometry
+\usepackage{eso-pic}      % For adding elements at specific positions
+\usepackage{sectsty}      % For section color and font style
+\usepackage{fontspec}     % For custom fonts
+\usepackage{titlesec}     % For title formatting
+
+% Set font to a popular tech industry font (IBM Plex Sans)
+\setmainfont{fonts}[
+  Path = _extensions/gatech/fonts/,
+  UprightFont = IBMPlexSans-Light.ttf,
+  BoldFont = IBMPlexSans-Medium.ttf,
+  ItalicFont = IBMPlexSans-LightItalic.ttf
+]
+
+\setsansfont{fonts}[
+  Path = _extensions/gatech/fonts/,
+  UprightFont = IBMPlexSans-Light.ttf,
+  BoldFont = IBMPlexSans-Medium.ttf,
+  ItalicFont = IBMPlexSans-LightItalic.ttf
+]
+
 % Define GA Tech colors
-\usepackage{xcolor}
-\definecolor{gatechblue}{RGB}{0, 33, 71}
-\definecolor{gatechgold}{RGB}{207, 181, 59}
+\definecolor{gatechblue}{HTML}{002147}
+\definecolor{gatechgold}{HTML}{CFB53B}
+\definecolor{gatechblue_light}{HTML}{335378}
+\definecolor{gatechgold_light}{HTML}{E3C96D}
+\definecolor{gatechgold_dark}{HTML}{A58B31} % Darker version for nested subsections
 
-% Set up page headers
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\lhead{\textbf{\color{gatechblue} GA Tech Data Analytics Masters}}
-\rhead{\includegraphics[height=1cm]{gatech_logo.png}} % Include logo
+% Set page size with a wider right margin
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm, bottom=20mm, right=35mm}
 
-% Section and Subsection Colors
+% Add a right-hand side colored border with logo
+\AddToShipoutPicture{% 
+    \AtPageLowerLeft{% 
+        \put(\LenToUnit{\dimexpr\paperwidth-25mm},0){% 
+            \color{gatechgold}\rule{25mm}{\LenToUnit\paperheight}%
+          }%
+     }%
+    % Position logo at the top of the right-hand side
+    \AtPageLowerLeft{%
+        \put(\LenToUnit{\dimexpr\paperwidth-20mm},27.2cm){%
+            \includegraphics[width=15mm]{_extensions/gatech/gat_logo.png}%
+          }%
+     }%
+}
+
+% Style the page number on the right
+\fancypagestyle{right_board}{
+  \fancyhf{}
+  \renewcommand\headrulewidth{0pt}
+  \fancyfoot[R]{\thepage}
+  \fancyfootoffset{23mm}
+}
+\setlength{\footskip}{20pt}
+
+% Customize section and subsection colors and styles
 \titleformat{\section}
   {\color{gatechblue}\normalfont\Large\bfseries}
   {\thesection}{1em}{}
 
 \titleformat{\subsection}
-  {\color{gatechgold}\normalfont\large\bfseries}
+  {\color{gatechblue_light}\normalfont\large\bfseries}
   {\thesubsection}{1em}{}
+
+% Nested subsection style with dark gold color
+\titleformat{\subsubsection}
+  {\color{gatechgold_dark}\normalfont\normalsize\bfseries}
+  {\thesubsubsection}{1em}{}
+
+% Customize title alignment (left-aligned, uppercase, with subtitle option)
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+\begin{flushleft}
+  {\sffamily\huge\textbf{\MakeUppercase{\@title}}} \vspace{0.3cm} \newline
+  {\Large {\@subtitle}} \newline
+  \@author
+\end{flushleft}\egroup
+}
+\makeatother
+
+

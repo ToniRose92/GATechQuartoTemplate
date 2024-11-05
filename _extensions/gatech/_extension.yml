@@ -8,10 +8,12 @@ contributes:
   formats:
     pdf:
       include-in-header:
-        - "header.tex"  # Includes custom LaTeX styling for GA Tech theme
+       - "header.tex"
+      include-before-body:
+        - "rightpagestyle.tex"  # Includes custom LaTeX styling for GA Tech theme
       toc: true           # Table of Contents toggle
       linkcolor: "gatechblue" # GA Tech theme color for links
       urlcolor: "gatechgold"  # GA Tech theme color for URLs
-      code-block-bg: light    # Light background for code blocks
-
+      #code-block-bg: light    # Light background for code blocks
+      
 
