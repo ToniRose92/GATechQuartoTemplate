@@ -2,18 +2,22 @@ title: Gatech
 author: Toni Garay
 description: |
   A customizable GA Tech-themed Quarto template for assignments and projects.
-version: 1.0.0
-#quarto-required: ">=1.5.0"
-contributes:
-  formats:
-    pdf:
-      include-in-header:
-       - "header.tex"
+version: 1.0.2
+contributes: 
+  formats: 
+    pdf: 
+      include-in-header: 
+        - "header.tex"  # Load the main header with shared styling 
       include-before-body:
-        - "rightpagestyle.tex"  # Includes custom LaTeX styling for GA Tech theme
-      toc: true           # Table of Contents toggle
-      linkcolor: "gatechblue" # GA Tech theme color for links
-      urlcolor: "gatechgold"  # GA Tech theme color for URLs
-      #code-block-bg: light    # Light background for code blocks
+        - "pagestyles.tex"
+      toc: true                    # Enable Table of Contents 
+      linkcolor: "gatechblue"      # GA Tech theme color for links 
+      urlcolor: "gatechgold"       # GA Tech theme color for URLs 
+      code-block-bg: "gatechgold_light"  # Light background for code blocks 
       
-
+      #biblio-title: "References"
+      #biblio-config: false  # Don't use the default template's biblatex commands
+      #biblatex-chicago: false  # Custom flag for enabling biblatex-chicago
+      #biblio-style: apa
+      #biblatexoptions:
+       # - backend=biber
