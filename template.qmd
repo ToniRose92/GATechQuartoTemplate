@@ -1,16 +1,145 @@
 ---
 title: GA Tech Themed Quarto Template
+author: Antonia Garay
+date: "`r Sys.Date()`"
+
 format:
   gatech-pdf: default
-author: Your Name
-date: "`r Sys.Date()`"
+execute:
+  echo: true
+citeproc: true
+bibliography: refs.bib
+csl: https://www.zotero.org/styles/ieee-with-url
+
+abstract-title: Abstract
+abstract: |
+  Provide a brief summary of the assignment, including objectives, methods, and key findings.
 ---
 
-## Introduction
+\newpage
 
-*TODO* Create an example file that demonstrates the formatting and features of your format.
+# Main Sections for Each Question {#sec-question1}
 
-## More Information
+Each top-level section is named after the specific question or problem being addressed (e.g., Question ##). This ensures clarity and helps reviewers or graders quickly locate your answers.
 
-You can learn more about controlling the appearance of PDF output here: <https://quarto.org/docs/output-formats/pdf-basics.html>
+You can input references and have them notated as well.[@john_doe2023; @jane_doe2022; @alan_smith2021]
 
+Why use it?
+
+-   Mimics the format of assignments where each question is treated as a standalone unit.
+-   Maintains a clear link between the problem and your analysis.
+-   Encourages modular thinking for multi-part assignments.
+
+:::: {.callout-note appearance="minimal"}
+Can use the callout note boxes as a way to list the actual homework question word of word or to call out the information as important.
+
+::: {.callout-important appearance="simple"}
+You can also nest a callout box so that additional callouts can be made.
+:::
+::::
+
+## Methodology
+
+Purpose: Describe how you approached the problem, including any analytical tools, techniques, or frameworks you used.
+
+Why use it?
+
+-   Demonstrates your thought process and analytical rigor.
+
+-   Provides enough detail for reproducibility without overwhelming with technical specific
+
+### Data Pre-Processing
+
+If using code boxes throughout the report vs at the bottom in one section ensure you import the proper libraries here or before.
+
+```{r, results='hide', warning=FALSE, message=FALSE, highlight=TRUE, tidy=TRUE}
+# Library imports
+library(ggplot2)
+data(mtcars)
+library(stats)
+library(utils)
+library(reticulate) # to allow python code blocks # <1> 
+```
+
+1.  Can also use annotation not just comments
+
+```{python, results='hide', warning=FALSE, message=FALSE, highlight=TRUE, tidy=TRUE}
+import pandas as pd # For data handling
+```
+
+### Data Processing
+
+## Summary
+
+Purpose: Summarize your findings and results in a concise, narrative form.
+
+Why use it?
+
+-   Allows readers to grasp your key results without diving into detailed data or visuals.
+
+-   Bridges the gap between methodology and insights.
+
+## Key Insights
+
+Purpose: Present the actionable insights or conclusions derived from the analysis.
+
+Why use it?
+
+-   Focuses on the "so what?" aspect of your work.
+
+-   Encourages you to think critically about the implications of your results.
+
+## Optional Code(Blocks) Section
+
+Purpose: Include code used for analysis and visualizations.
+
+Why use it?
+
+-   Keeps technical implementation separate from the narrative, making the report cleaner and easier to read.
+
+-   Ensures your work is reproducible and transparent.
+
+```{r, warning=FALSE, message=FALSE, highlight=TRUE, tidy=TRUE}
+#| layout-ncol: 2
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  labs(title = "Scatterplot: MPG vs. Weight")
+
+ggplot(mtcars, aes(x = factor(cyl))) +
+  geom_bar(fill = "steelblue") +
+  labs(title = "Bar Chart: Cylinder Count",
+       x = "Cylinders",
+       y = "Count")
+```
+
+```{python, warning=FALSE, message=FALSE, highlight=TRUE, tidy=TRUE}
+
+```
+
+\newpage
+
+# References
+
+::: {#refs}
+:::
+
+# Figures & Tables
+
+Figures, tables, and their legends, should be included at the end of the document. Figures and tables are easily included with Quarto, e.g. @fig-galogo and @tbl-example. See the relevant Quarto documentation for [figures](https://quarto.org/docs/authoring/figures.html) and [tables](https://quarto.org/docs/authoring/tables.html).
+
+![Legend (350 words max). Example legend text.](gat_logo.png){#fig-galogo}
+
+| car   | color | mgp   |
+|-------|-------|-------|
+| mazda | blue  | 10.4  |
+| fiat  | read  | 15.43 |
+
+: Legend (350 words max). Example legend text. {#tbl-example}
+
+# Appendix (Optional)
+
+Purpose: Include supplementary materials like extended analyses, additional visualizations, or raw data.
+
+Why use it?
+
+Keeps the main report focused while providing access to detailed information if needed.

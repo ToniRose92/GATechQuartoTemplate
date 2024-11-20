@@ -8,16 +8,19 @@ contributes:
     pdf: 
       include-in-header: 
         - "header.tex"  # Load the main header with shared styling 
+      
       include-before-body:
         - "pagestyles.tex"
       toc: true                    # Enable Table of Contents 
+      toc-depth: 3
+      number-sections: false
       linkcolor: "gatechblue"      # GA Tech theme color for links 
       urlcolor: "gatechgold"       # GA Tech theme color for URLs 
-      code-block-bg: "gatechgold_light"  # Light background for code blocks 
+      code-block-bg: "gatechgoal_ultralight"  # Light background for code blocks 
       
-      #biblio-title: "References"
-      #biblio-config: false  # Don't use the default template's biblatex commands
-      #biblatex-chicago: false  # Custom flag for enabling biblatex-chicago
-      #biblio-style: apa
-      #biblatexoptions:
-       # - backend=biber
+      latex-engine: xelatex
+      keep_tex: true
+      code-line-numbers: true
+      code-annotations: select
+      colorlinks: true
+      code-fold: true
