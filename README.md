@@ -28,7 +28,29 @@ If you are using R, ensure any necessary R packages for Quarto documents are ins
 
 For more documentation on Quarto extensions, see the [Quarto Extensions Documentation](https://quarto.org/docs/extensions/).
 
-## Installation Options
+## Templates vs. Extensions
+
+**Templates** and **Extensions** serve different purposes within Quarto:
+
+**Templates**: Provide a structured starting point for new documents or projects, often including preset layouts, formatting, and example content. They’re ideal if you want a quick, ready-made setup to begin authoring your content without starting from scratch.
+
+**Extensions**: Enhance Quarto by adding new formats, tools, or functionality. They can be applied to existing projects and documents to change or improve their output appearance or capabilities.
+
+Use a **template** if you’re starting a new project and want a head start with a proven layout. Use an **extension** if you already have a project and want to add new formatting options, like this GA Tech–branded PDF style, without restructuring your existing work.
+
+Learn more about templates here: [Quarto Templates Documentation](https://quarto.org/docs/extensions/starter-templates.html).
+
+## Using as a Template
+
+To create a new project from this template, run the following command:
+
+```bash
+
+quarto use template ToniRose92/GATechQuartoTemplate
+```
+This will create a new directory with starter files and the configuration needed to produce GA Tech–branded PDFs. It’s an excellent way to begin a new document or report with the styling ready to go.
+
+## Installation as an Extension for an Existing Project
 
 ### Option A: Using the Command Line
 
