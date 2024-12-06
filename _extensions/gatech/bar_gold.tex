@@ -1,0 +1,23 @@
+% 25.4mm = 1in; Layout slightly adjusted for bar and spacing
+\geometry{letterpaper, top=25.4mm, bottom=25.4mm, left=20.4mm, right=30mm}
+
+% bar_gold.tex: Adds a gold right-hand bar and navy GA Tech logo
+\AddToShipoutPicture{%
+    \AtPageLowerLeft{%
+        % Draw gold bar
+        \put(\LenToUnit{\dimexpr\paperwidth-25.4mm},0){%
+            \color{gatechgold}\rule{25.4mm}{\LenToUnit\paperheight}%
+        }%
+    }
+    \AtPageLowerLeft{%
+        % Place navy GT logo
+        \put(\LenToUnit{\dimexpr\paperwidth-21mm},26cm){%
+            \includegraphics[width=16mm]{_extensions/ToniRose92/gatech/GTVertical_Navy.png}%
+        }%
+    }%
+}
+
+% Define new page number colors based on bar color
+\renewcommand{\currentpagecolor}{gatechblue_light}   % Current page number in gold
+\renewcommand{\totalpagecolor}{gatechblue}     % Total pages in blue (for example)
+\renewcommand{\numberoffset}{2.0cm}
