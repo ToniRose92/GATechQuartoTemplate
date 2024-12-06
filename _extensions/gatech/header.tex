@@ -55,21 +55,11 @@
 %-----------------------------------%
 % PAGE GEOMETRY & LAYOUT
 %-----------------------------------%
-\geometry{letterpaper, top=20.4mm, bottom=25.4mm, left=20.4mm, right=30mm}
+% Standard layout
+\geometry{letterpaper, margin=1in}
 
-% Add a right-hand vertical gold bar and GA Tech logo at the top of it
-\AddToShipoutPicture{%
-    \AtPageLowerLeft{%
-        \put(\LenToUnit{\dimexpr\paperwidth-25.4mm},0){%
-            \color{gatechgold}\rule{25.4mm}{\LenToUnit\paperheight}%
-        }%
-    }
-    \AtPageLowerLeft{%
-        \put(\LenToUnit{\dimexpr\paperwidth-21mm},26cm){%
-            \includegraphics[width=16mm]{_extensions/ToniRose92/gatech/GTVertical_Navy.png}%
-        }%
-    }%
-}
+% Add a right-hand vertical gold/blue bar and GA Tech logo at the top of it
+% choose_bar.lua, bar_gold.tex, and bar_blue.tex
 
 %-----------------------------------%
 % HEADER & FOOTER CONFIGURATION
@@ -90,9 +80,16 @@
   }
 
   % Footer: Page X of Y
-  \fancyfoot[R]{\thepage/\pageref{LastPage}}
-  \fancyfootoffset{2.0cm}
+  \fancyfoot[R]{%
+    \textcolor{\currentpagecolor}{\thepage}\textcolor{\totalpagecolor}{/\pageref*{LastPage}}%
+  }
+  \fancyfootoffset{\numberoffset}
 }
+
+% Define a macro with a default color (e.g., gatechblue)
+\providecommand{\currentpagecolor}{gatechblue}
+\providecommand{\totalpagecolor}{gatechgold_dark}
+\providecommand{\numberoffset}{1.0cm}
 
 % Adjust distances for header and footer
 \setlength{\topmargin}{-1.75cm}
