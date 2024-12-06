@@ -3,6 +3,8 @@ title: GA Tech Themed Quarto Template
 author: Antonia Garay
 date: "`r Sys.Date()`"
 
+params:
+  bar_style: gold # gold = gold bar blue logo, blue = blue bar gold log, empty = standard format
 format:
   gatech-pdf: default
 execute:
