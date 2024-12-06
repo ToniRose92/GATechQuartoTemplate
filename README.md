@@ -9,6 +9,12 @@ This Quarto extension provides a Georgia Tech–branded PDF format with custom s
 - Modifiable header and configuration files to personalize further.
 - Works with both R and Python Quarto projects and integrates smoothly in RStudio or JupyterLab environments.
 
+_Second page preview of the template options standard (empty), gold, and blue_:
+
+<img src="example-pics/temp-pic-2.png" alt="template p2" style="width:30%; height:auto;"> | <img src="example-pics/temp-gold-pic-2.png" alt="template-gold p2" style="width:30%; height:auto;"> | <img src="example-pics/temp-blue-pic-2.png" alt="template-blue p2" style="width:30%; height:auto;">
+
+
+
 ## Prerequisites
 
 1. **Quarto**: Make sure you have [Quarto installed](https://quarto.org/docs/get-started/).  
