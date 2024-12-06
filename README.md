@@ -131,7 +131,10 @@ This will produce a PDF file styled with the GA Tech branding.
 
 ## Customization
 
-- (TO DO/ In Progress) **Logo and Side Band Color:** Modify the `_extension.yml` file in the `extensions/GATechQuartoTemplate` directory to change the path to the logo and the side band color.  
+- **Logo and Side Band Color:** Modify your `.qmd` file by updating the `bar_style` in the YAML header to change the logo and the side band color.
+   -  `bar_style: blue` is a blue bar with a gold logo as seen in the [template-blue](https://github.com/ToniRose92/GATechQuartoTemplate/blob/main/template-blue.qmd) file.
+   -  `bar_style: gold` is a gold bar with a blue logo as seen in the [template-gold](https://github.com/ToniRose92/GATechQuartoTemplate/blob/main/template-gold.qmd),
+   -  `bar_style: ` is a simple layout with no bar or logo as seen in the [template](https://github.com/ToniRose92/GATechQuartoTemplate/blob/main/template.qmd)
 - **Further Customizations:** For more advanced customizations, edit the `header.tex` file. You may adjust fonts, margins, header styles, and other LaTeX configurations. These modifications allow you to personalize the template to match other branding or stylistic requirements.
 
 ## Additional Resources
