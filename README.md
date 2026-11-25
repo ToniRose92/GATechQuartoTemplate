@@ -2,6 +2,14 @@
 
 This Quarto extension provides a Georgia Tech–branded PDF format with custom styling and formatting, including a side color band and a logo. It was inspired by the customization techniques outlined by [N. Rennie’s Quarto PDF blog post](https://nrennie.rbind.io/blog/pdf-quarto/making-pretty-pdf-quarto/) and leverages some ideas from their formatting approach.
 
+## Why I Built This
+
+During my Georgia Tech analytics coursework, I was turning in a lot of assignments written in Quarto. I wanted those reports to feel a little more like *Georgia Tech* rather than using the same default document styling every time.
+
+Since I was already working in Quarto so often, building a reusable Georgia Tech–themed PDF format made more sense than reformatting each assignment by hand. It started as a practical solution for my own workflow and became a way to explore how Quarto extensions, LaTeX, and document styling fit together.
+
+This is a personal project for coursework and report formatting, not an official Georgia Tech template or an endorsement by the Institute.
+
 ## Features
 
 - Georgia Tech branding with customizable logo and side band color.
